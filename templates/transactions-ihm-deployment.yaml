@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transactions-ihm-angular
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.transactionsIhm.replicaCount }}
+  selector:
+    matchLabels:
+      app: transactions-ihm
+  template:
+    metadata:
+      labels:
+        app: transactions-ihm
+    spec:
+      containers:
+        - image: {{ .Values.transactionsIhm.imageName }}:{{ .Values.transactionsIhm.imageVersion }}
+          name: transactions-ihm
+          ports:
+            - containerPort: 80
+          resources: {}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/share/nginx/html/assets/environments/
+      restartPolicy: Always
+      volumes:
+      - name: config-volume
+        configMap:
+          # Provide the name of the ConfigMap containing the files you want
+          # to add to the container
+          name: transactions-ihm-config-map
