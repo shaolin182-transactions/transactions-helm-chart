@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transactions-sync
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.transactionsSync.replicaCount }}
+  selector:
+    matchLabels:
+      app: transactions-sync
+  template:
+    metadata:
+      labels:
+        app: transactions-sync
+    spec:
+      containers:
+        - image: {{ .Values.transactionsSync.imageName }}:{{ .Values.transactionsSync.imageVersion }}
+          name: transactions-sync
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+          env:
+          - name: TARGET_ENV
+            value: prod
+      restartPolicy: Always
+      volumes:
+      - name: config-volume
+        configMap:
+          # Provide the name of the ConfigMap containing the files you want
+          # to add to the container
+          name: transactions-sync-config-map
