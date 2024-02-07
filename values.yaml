@@ -16,7 +16,7 @@ global:
 transactionsConfigServer:
   replicaCount: 1
   imageName: "jugirard/transactions-config-server"
-  imageVersion: "v1.2.4.2"
+  imageVersion: "v1.3"
 
   gitRepo: "git@github.com:shaolin182-transactions/transactions-config.git"
 
@@ -30,7 +30,7 @@ transactionsBackOffice:
   replicaCount: 1
 
   imageName: "jugirard/transactions-java-server"
-  imageVersion: "latest"
+  imageVersion: "v1.3.9.1"
 
   database:
     capacity: 200Mi
