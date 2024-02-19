@@ -25,5 +25,5 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: mongodb
-    version: 13.15.4
+    version: 13.15.5
     repository: https://charts.bitnami.com/bitnami

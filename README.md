@@ -17,5 +17,6 @@ helm list
 helm uninstall -n transactions transactions-test
 
 # Upgrade app
+# From transactions-helm-chart directory
 helm upgrade -n transactions transactions-test transactions-helm-chart-0.1.0.tgz -f values.yaml -f values-secrets.yaml
 ```

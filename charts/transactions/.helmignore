@@ -21,7 +21,10 @@
 .idea/
 *.tmproj
 .vscode/
-output
 
+# Related to transactions-helm-charts
+output
 transactions-helm-chart-*.tgz
+*secret*
+transactions-helm-chart*/
 

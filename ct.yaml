@@ -1,0 +1,6 @@
+chart-repos:
+  - bitnami=https://charts.bitnami.com/bitnami
+target-branch: main
+chart-dirs:
+  - charts
+validate-maintainers: false
