@@ -26,6 +26,9 @@ transactionsConfigServer:
     enabled: "true"
     hostname: "transactions-config-server.127-0-0-1.nip.io"
 
+  passphrase: "dummy"
+  privateKey: "dummy"
+
 transactionsBackOffice:
   replicaCount: 1
 
@@ -53,7 +56,6 @@ transactionsSync:
   ingress:
     hostname: "transactions-sync.127-0-0-1.nip.io"
 
-
 # Configuration sor mongodb subchart
 mongodb:
   persistence:
@@ -64,8 +66,3 @@ mongodb:
 
   auth:
     enabled: false
-#  auth:
-#    databases:
-#      - transactions
-
-
