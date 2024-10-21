@@ -67,13 +67,11 @@ transactionsSync:
 
   config: |
     server.port=8080
-    
     # MongoDB properties
     spring.data.mongodb.host={{ .Values.mongodb.service.nameOverride }}
     spring.data.mongodb.port={{ .Values.mongodb.service.ports.mongodb }}
     spring.data.mongodb.database=transactions
     spring.data.mongodb.uri=mongodb://{{ .Values.mongodb.service.nameOverride }}:{{ .Values.mongodb.service.ports.mongodb }}/transactions
-    
     # ES properties
     es.index=transactions
     es.hostname=transactions-es-elasticsearch.elasticsearch.svc.cluster.local:9200
