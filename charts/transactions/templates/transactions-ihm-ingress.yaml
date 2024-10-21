@@ -8,8 +8,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-#    - host: "transactions.127-0-0-1.nip.io"
-    - http:
+    - host: {{ .Values.transactionsIhm.ingress.hostname }}
+      http:
         paths:
         - pathType: Prefix
           path: /

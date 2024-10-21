@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: transactions-ihm-assets-config-map
+  namespace: {{ .Values.namespace }}
+data:
+  categories.json: |-
+    {{ .Values.transactionsIhm.assets.categories | toJson }}
+  bankAccount.json: |-
+    {{ .Values.transactionsIhm.assets.bankAccount | toJson }}
