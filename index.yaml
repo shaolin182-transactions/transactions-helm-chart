@@ -3,6 +3,20 @@ entries:
   transactions-helm-chart:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-10-23T20:01:05.916316142Z"
+    dependencies:
+    - name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.15.5
+    description: A Helm chart for Kubernetes
+    digest: b957a07cb0247275d5ee95f7ec82fb91990a33874ce9effb4ad238dc4d867a02
+    name: transactions-helm-chart
+    type: application
+    urls:
+    - transactions-helm-chart-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-03-18T21:39:49.251755408Z"
     dependencies:
     - name: mongodb
@@ -29,4 +43,4 @@ entries:
     urls:
     - transactions-helm-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-18T21:39:49.251765737Z"
+generated: "2024-10-23T20:01:05.916329006Z"
