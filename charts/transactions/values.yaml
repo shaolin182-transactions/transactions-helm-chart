@@ -27,7 +27,6 @@ transactionsBackOffice:
 
   # Configuration for transactions-java-server app
   config:
-    # Content of application.yaml
     server:
       port: 8080
 

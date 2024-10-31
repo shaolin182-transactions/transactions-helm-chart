@@ -4,4 +4,5 @@ metadata:
   name: transactions-server-config-map
   namespace: {{ .Values.namespace }}
 data:
-  application.yaml: {{ toYaml .Values.transactionsBackOffice.config | indent 2 }}
+  application.yaml:
+{{ .Values.transactionsBackOffice.config | toYaml | indent 4 }}
