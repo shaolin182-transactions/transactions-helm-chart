@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Values.namespace }}
 data:
   application.yaml:
-    {{ .Values.transactionsBackOffice.config | toYaml }}
+{{ .Values.transactionsBackOffice.config | toYaml | indent 4 }}
