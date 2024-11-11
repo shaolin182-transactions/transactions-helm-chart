@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: transactions-back-office-ingress
   namespace: {{ .Values.namespace }}
-#  annotations:
-#    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:

@@ -21,7 +21,11 @@ spec:
           env:
           - name: TARGET_ENV
             value: prod
-          - name: CONFIG_SERVER
-            value: http://transactions-config-server-svc:8888
+          volumeMounts:
+            - name: app-configmap
+              mountPath: /etc/config
       restartPolicy: Always
-status: {}
+      volumes:
+        - name: app-configmap
+          configMap:
+            name: transactions-server-config-map

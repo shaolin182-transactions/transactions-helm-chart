@@ -12,23 +12,7 @@ global:
   logLevel: DEBUG
   namespaceOverride: transactions
 
-# Configuration related to transactions-config-server
-transactionsConfigServer:
-  replicaCount: 1
-  imageName: "jugirard/transactions-config-server"
-  imageVersion: "v1.3"
-
-  gitRepo: "git@github.com:shaolin182-transactions/transactions-config.git"
-
-  port: 8888
-
-  ingress:
-    enabled: "true"
-    hostname: "transactions-config-server.127-0-0-1.nip.io"
-
-  passphrase: "dummy"
-  privateKey: "dummy"
-
+# Configuration related to Transactions App Back Office
 transactionsBackOffice:
   replicaCount: 1
 
@@ -41,11 +25,35 @@ transactionsBackOffice:
   ingress:
     hostname: "transactions.127-0-0-1.nip.io"
 
+  # Configuration for transactions-java-server app
+  config:
+    server:
+      port: 8080
+
 transactionsIhm:
   replicaCount: 1
 
   imageName: "jugirard/transactions-ihm-angular"
   imageVersion: "0.1.5.6"
+
+  ingress:
+    hostname: "transactions-ihm.127-0-0-1.nip.io"
+
+  config:
+    production: true
+    transactionsUrl: "someURL"
+
+  assets:
+    categories:
+      - id: "1"
+        label: "Maison"
+      - id: "2"
+        label: "Voiture"
+    bankAccount:
+      - id: "1"
+        label: "CMB"
+      - id: "2"
+        label: "Boursorama"
 
 transactionsSync:
   replicaCount: 1
@@ -55,6 +63,18 @@ transactionsSync:
 
   ingress:
     hostname: "transactions-sync.127-0-0-1.nip.io"
+
+  config: |
+    server.port=8080
+    # MongoDB properties
+    spring.data.mongodb.host={{ .Values.mongodb.service.nameOverride }}
+    spring.data.mongodb.port={{ .Values.mongodb.service.ports.mongodb }}
+    spring.data.mongodb.database=transactions
+    spring.data.mongodb.uri=mongodb://{{ .Values.mongodb.service.nameOverride }}:{{ .Values.mongodb.service.ports.mongodb }}/transactions
+    # ES properties
+    es.index=transactions
+    es.hostname=transactions-es-elasticsearch.elasticsearch.svc.cluster.local:9200
+    spring.elasticsearch.rest.uris=http://transactions-es-elasticsearch.elasticsearch.svc.cluster.local:9200
 
 # Configuration sor mongodb subchart
 mongodb:

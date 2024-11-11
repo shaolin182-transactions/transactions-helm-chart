@@ -1,0 +1,8 @@
+services:
+  helm-dev-container:
+    tty: true
+    build:
+      dockerfile: ./Dockerfile
+
+    volumes:
+      - ../../charts:/charts

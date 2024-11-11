@@ -3,6 +3,7 @@
 ```shell
 # Generate files
 helm template -f values.yaml -f values-secrets.yaml .
+helm template -f values.yaml .
 
 # Package chart, use Chart.yaml file for getting some information
 helm package .
