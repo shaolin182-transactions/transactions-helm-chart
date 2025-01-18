@@ -30,6 +30,8 @@ transactionsBackOffice:
     server:
       port: 8080
 
+  persistence: True
+
 transactionsIhm:
   replicaCount: 1
 
