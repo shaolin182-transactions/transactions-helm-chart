@@ -1,4 +1,4 @@
-{{- if eq .Values.transactionsBackOffice.persistence "true" }}
+{{- if eq .Values.transactionsBackOffice.persistence }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
