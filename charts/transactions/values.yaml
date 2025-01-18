@@ -26,9 +26,9 @@ transactionsBackOffice:
     hostname: "transactions.127-0-0-1.nip.io"
 
   # Configuration for transactions-java-server app
-  config:
-    server:
-      port: 8080
+  config: null
+
+  persistence: "true"
 
 transactionsIhm:
   replicaCount: 1
@@ -39,9 +39,7 @@ transactionsIhm:
   ingress:
     hostname: "transactions-ihm.127-0-0-1.nip.io"
 
-  config:
-    production: true
-    transactionsUrl: "someURL"
+  config: null
 
   assets:
     categories:
