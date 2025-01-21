@@ -27,6 +27,7 @@ transactionsBackOffice:
 
   # Configuration for transactions-java-server app
   config: null
+  configMap: "true"
 
   persistence: "true"
 
@@ -40,6 +41,8 @@ transactionsIhm:
     hostname: "transactions-ihm.127-0-0-1.nip.io"
 
   config: null
+  configMap: "true"
+  configMapAsset: "true"
 
   assets:
     categories:
@@ -62,6 +65,7 @@ transactionsSync:
   ingress:
     hostname: "transactions-sync.127-0-0-1.nip.io"
 
+  configMap: "true"
   config: |
     server.port=8080
     # MongoDB properties
