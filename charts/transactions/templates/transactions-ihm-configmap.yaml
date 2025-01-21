@@ -1,7 +1,10 @@
+{{- if eq .Values.transactionsIhm.configMap "true" }}
 apiVersion: v1
 metadata:
   name: transactions-ihm-config-map
   namespace: {{ .Values.namespace }}
 data:
-  config.json: {{ .Values.transactionsIhm.config | toJson }}
+  config.json: |-
+    {{ .Values.transactionsIhm.config | toJson }}
 kind: ConfigMap
+{{- end }}
