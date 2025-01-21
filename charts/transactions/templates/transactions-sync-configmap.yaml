@@ -1,3 +1,4 @@
+{{- if eq .Values.transactionsSync.configMap "true" }}
 apiVersion: v1
 metadata:
   name: transactions-sync-config-map
@@ -6,3 +7,4 @@ data:
   application.properties: {{ toYaml .Values.transactionsSync.config | indent 2 }}
 
 kind: ConfigMap
+{{- end }}
