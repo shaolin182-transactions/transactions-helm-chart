@@ -57,7 +57,7 @@ transactionsIhm:
         label: "Boursorama"
 
 transactionsSync:
-  replicaCount: 1
+  schedule: "*/10 * * * *"
 
   imageName: "jugirard/transactions-sync-process"
   imageVersion: "v0.1.2"
