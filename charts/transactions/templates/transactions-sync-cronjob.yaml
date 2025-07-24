@@ -25,7 +25,6 @@ spec:
               env:
               - name: TARGET_ENV
                 value: prod
-          restartPolicy: Always
           volumes:
           - name: config-volume
             configMap:
