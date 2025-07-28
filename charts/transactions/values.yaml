@@ -27,6 +27,7 @@ transactionsBackOffice:
 
   # Configuration for transactions-java-server app
   config: null
+  configLog4j: null
   configMap: "true"
 
   persistence: "true"
