@@ -1,3 +1,4 @@
+name: "helm-dev-container"
 services:
   helm-dev-container:
     tty: true

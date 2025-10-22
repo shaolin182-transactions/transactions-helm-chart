@@ -27,6 +27,7 @@ transactionsBackOffice:
 
   # Configuration for transactions-java-server app
   config: null
+  configLog4j: null
   configMap: "true"
 
   persistence: "true"
@@ -57,7 +58,7 @@ transactionsIhm:
         label: "Boursorama"
 
 transactionsSync:
-  replicaCount: 1
+  schedule: "*/10 * * * *"
 
   imageName: "jugirard/transactions-sync-process"
   imageVersion: "v0.1.2"
