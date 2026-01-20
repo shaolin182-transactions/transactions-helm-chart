@@ -24,8 +24,13 @@ spec:
               mountPath: /usr/share/nginx/html/assets/environments/
             - name: assets-volume
               mountPath: /usr/share/nginx/html/assets/data/
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/nginx.conf
       restartPolicy: Always
       volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: transactions-ihm-nginx-config-map
       - name: config-volume
         configMap:
           # Provide the name of the ConfigMap containing the files you want
