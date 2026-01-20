@@ -45,6 +45,8 @@ transactionsIhm:
   configMap: "true"
   configMapAsset: "true"
 
+  exposedPort: 8080
+
   assets:
     categories:
       - id: "1"

@@ -17,7 +17,7 @@ spec:
         - image: {{ .Values.transactionsIhm.imageName }}:{{ .Values.transactionsIhm.imageVersion }}
           name: transactions-ihm
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.transactionsIhm.exposedPort }}
           resources: {}
           volumeMounts:
             - name: config-volume
