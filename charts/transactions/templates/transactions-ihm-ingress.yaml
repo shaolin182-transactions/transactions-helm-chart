@@ -3,10 +3,16 @@ kind: Ingress
 metadata:
   name: transactions-ihm-ingress
   namespace: {{ .Values.namespace }}
-#  annotations:
-#    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  annotations:
+    cert-manager.io/cluster-issuer: "{{ .Values.global.certIssuer }}"
+    cert-manager.io/common-name: "{{ .Values.transactionsIhm.ingress.hostname }}"
+    cert-manager.io/usages: "server auth"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - {{ .Values.transactionsIhm.ingress.hostname }}
+      secretName: ingress-transactions-ihm-tls
   rules:
     - host: {{ .Values.transactionsIhm.ingress.hostname }}
       http:
