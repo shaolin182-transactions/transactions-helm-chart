@@ -25,6 +25,11 @@ spec:
               env:
               - name: TARGET_ENV
                 value: prod
+              - name: POSTGRES_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: transactions-sync-database-password
+                    key: password
           restartPolicy: Never
           volumes:
           - name: config-volume
