@@ -12,6 +12,8 @@ global:
   logLevel: DEBUG
   namespaceOverride: transactions
 
+  certIssuer: "root-ca-issuer"
+
 # Configuration related to Transactions App Back Office
 transactionsBackOffice:
   replicaCount: 1

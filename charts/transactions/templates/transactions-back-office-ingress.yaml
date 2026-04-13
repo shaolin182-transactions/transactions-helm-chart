@@ -3,8 +3,16 @@ kind: Ingress
 metadata:
   name: transactions-back-office-ingress
   namespace: {{ .Values.namespace }}
+  annotations:
+    cert-manager.io/cluster-issuer: "{{ .Values.global.certIssuer }}"
+    cert-manager.io/common-name: "{{ .Values.transactionsBackOffice.ingress.hostname }}"
+    cert-manager.io/usages: "server auth"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+      - {{ .Values.transactionsBackOffice.ingress.hostname }}
+      secretName: ingress-transactions-back-office-tls
   rules:
     - host: {{ .Values.transactionsBackOffice.ingress.hostname }}
       http:
