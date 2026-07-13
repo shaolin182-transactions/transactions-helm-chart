@@ -28,8 +28,13 @@ spec:
               - name: POSTGRES_PASSWORD
                 valueFrom:
                   secretKeyRef:
-                    name: transactions-sync-database-password
-                    key: password
+                    name: transactions-sync-secrets
+                    key: db-password
+              - name: OAUTH2_CLIENT_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: transactions-sync-secrets
+                    key: oauth2-client-secret
           restartPolicy: Never
           volumes:
           - name: config-volume
