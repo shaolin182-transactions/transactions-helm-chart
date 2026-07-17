@@ -3,6 +3,20 @@ entries:
   transactions-helm-chart:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-07-17T19:29:22.741189269Z"
+    dependencies:
+    - name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.15.5
+    description: A Helm chart for Kubernetes
+    digest: 723675abd3072f4c18138fb0fbad2d83922892ef7844b02ab1997aa9c17326f8
+    name: transactions-helm-chart
+    type: application
+    urls:
+    - transactions-helm-chart-0.4.3-RC3.tgz
+    version: 0.4.3-RC3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-07-13T08:01:53.09123192Z"
     dependencies:
     - name: mongodb
@@ -101,20 +115,6 @@ entries:
     version: 0.4.0-RC6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-07-24T12:48:34.276377408Z"
-    dependencies:
-    - name: mongodb
-      repository: https://charts.bitnami.com/bitnami
-      version: 13.15.5
-    description: A Helm chart for Kubernetes
-    digest: a59c4509ad7c5e4f1f6301100e85bab1f8dae7dc11c7941830f0043770266a86
-    name: transactions-helm-chart
-    type: application
-    urls:
-    - transactions-helm-chart-0.4.0-RC4.tgz
-    version: 0.4.0-RC4
-  - apiVersion: v2
-    appVersion: 1.16.0
     created: "2025-07-29T06:15:35.800581446Z"
     dependencies:
     - name: mongodb
@@ -122,6 +122,20 @@ entries:
       version: 13.15.5
     description: A Helm chart for Kubernetes
     digest: cd4f1253b22b09f227eab3c01b506bdf1142fcf04371a1144667d3d81ead6df7
+    name: transactions-helm-chart
+    type: application
+    urls:
+    - transactions-helm-chart-0.4.0-RC4.tgz
+    version: 0.4.0-RC4
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-07-24T12:48:34.276377408Z"
+    dependencies:
+    - name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.15.5
+    description: A Helm chart for Kubernetes
+    digest: a59c4509ad7c5e4f1f6301100e85bab1f8dae7dc11c7941830f0043770266a86
     name: transactions-helm-chart
     type: application
     urls:
@@ -407,4 +421,4 @@ entries:
     urls:
     - transactions-helm-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2026-07-13T08:01:53.09148821Z"
+generated: "2026-07-17T19:29:22.74152485Z"
