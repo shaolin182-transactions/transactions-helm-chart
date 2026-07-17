@@ -45,5 +45,5 @@ spec:
               # to add to the container
               name: transactions-sync-config-map
           - name: certs-volume
-            secrets:
+            secret:
               secretName: transactions-sync-secret-certs
