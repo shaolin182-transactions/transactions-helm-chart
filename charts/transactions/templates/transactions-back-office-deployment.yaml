@@ -21,6 +21,11 @@ spec:
           env:
           - name: TARGET_ENV
             value: prod
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: transactions-back-secrets
+                key: db-password
           volumeMounts:
             - name: app-configmap
               mountPath: /etc/config
