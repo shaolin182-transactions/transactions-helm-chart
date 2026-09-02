@@ -22,9 +22,21 @@ spec:
               volumeMounts:
                 - name: config-volume
                   mountPath: /etc/config
+                - name: certs-volume
+                  mountPath: /etc/certs
               env:
               - name: TARGET_ENV
                 value: prod
+              - name: POSTGRES_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: transactions-sync-secrets
+                    key: db-password
+              - name: OAUTH2_CLIENT_SECRET
+                valueFrom:
+                  secretKeyRef:
+                    name: transactions-sync-secrets
+                    key: oauth2-client-secret
           restartPolicy: Never
           volumes:
           - name: config-volume
@@ -32,3 +44,6 @@ spec:
               # Provide the name of the ConfigMap containing the files you want
               # to add to the container
               name: transactions-sync-config-map
+          - name: certs-volume
+            secret:
+              secretName: transactions-sync-secret-certs
