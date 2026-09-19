@@ -15,23 +15,23 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
       with:
         fetch-depth: 0
 
     - name: Set up Helm
-      uses: azure/setup-helm@v3
+      uses: azure/setup-helm@5119fcb9089d432beecbf79bb2c7915207344b78 # v3
       with:
         version: v3.12.1
 
     - name: Setup Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
       with:
         python-version: '3.10'
         check-latest: true
 
     - name: Set up chart-testing
-      uses: helm/chart-testing-action@v2.8.0
+      uses: helm/chart-testing-action@6ec842c01de15ebb84c8627d2744a0c2f2755c9f # v2.8.0
 
     - name: Run chart-testing (lint)
       run: ct lint --config ct.yaml --debug
